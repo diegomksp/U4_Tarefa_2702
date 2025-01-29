@@ -6,7 +6,6 @@
 #include "hardware/adc.h"
 #include "hardware/timer.h"
 #include "pico/bootrom.h"
-
 #include "pio_matrix.pio.h"
 
 #define L (0.05) // Luminosidade dos leds
@@ -15,8 +14,6 @@
 #define OUT_PIN 7   // Pino de dados conectado à matriz
 
 #define RED 13
-#define GREEN 12
-#define BLUE 11
 
 #define buton_A 5
 #define buton_B 6
@@ -102,7 +99,6 @@ int main()
     uint16_t i;
     uint32_t valor_led;
     double r = 0.0, b = 0.0, g = 0.0;
-    
 
     ok = set_sys_clock_khz(128000, false);
     if (ok)
@@ -118,12 +114,8 @@ int main()
     while(true){
 
         gpio_put(RED,1);
-        gpio_put(GREEN,1);
-        gpio_put(BLUE,1);
         sleep_ms(100);
         gpio_put(RED,0);
-        gpio_put(GREEN,0);
-        gpio_put(BLUE,0);
         sleep_ms(100);
         
         if(contador==0){numeros(numero0, valor_led, pio, sm, r, g, b);};
@@ -147,11 +139,7 @@ void initialize_gpio()
 {
     gpio_init(RED);
     gpio_set_dir(RED, GPIO_OUT);
-    gpio_init(GREEN);
-    gpio_set_dir(GREEN, GPIO_OUT);
-    gpio_init(BLUE);
-    gpio_set_dir(BLUE, GPIO_OUT);
-    
+       
     gpio_init(buton_A);
     gpio_set_dir(buton_A, GPIO_IN);
     gpio_pull_up(buton_A);
