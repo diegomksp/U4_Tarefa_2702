@@ -17,8 +17,8 @@
 
 #define buton_A 5
 #define buton_B 6
-uint16_t contador = 0;
-uint32_t last_time = 0;
+static volatile uint16_t contador = 0;
+static volatile uint32_t last_time = 0;
 
 void initialize_gpio();
 void numeros(double *desenho, uint32_t valor_led, PIO pio, uint sm, double r, double g, double b);
