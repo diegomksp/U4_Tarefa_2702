@@ -23,7 +23,7 @@ Este projeto utiliza um Raspberry Pi Pico para controlar uma matriz de LEDs, exi
 
 ## Demonstração
 Aqui está um vídeo demonstrando o funcionamento do projeto:
-[INSIRA AQUI O LINK PARA O VÍDEO]
+https://youtu.be/NNJKv6zQ86c?si=a1-P5HYAtIidoNf0
 
 ## Licença
 Este projeto é de código aberto. Você pode usá-lo e modificá-lo conforme necessário.
